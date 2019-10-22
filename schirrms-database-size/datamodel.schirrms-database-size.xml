@@ -14,40 +14,27 @@
 					<tracking_level>none</tracking_level>
 				</field>
 			</fields>
-			<methods>
-				<method id="GetAsHTML" _delta="define">
-					<static>false</static>
-					<access>public</access>
-					<type>Overload-DBObject</type>
-					<code><![CDATA[ public function GetAsHTML($sValue, $bLocalize = true)
-					{
-						$sHTMLValue = parent::GetAsHTML($sValue, $oHostObject, $bLocalize);
-						if(($sHTMLValue !== null) && ($sHTMLValue !== '') && ($sValue === 'UsedSpace'))
-						{
-							// Converting space in human readable value only
-							$sHumanSize = $sHTMLValue." B";
-							if(is_numeric($sHTMLValue))
-							{
-								$sUnit = ' KMGTP';
-								for ($iLevel=50; $iLevel >0 ;$iLevel=$iLevel-10)
-								{
-									if ($sHTMLValue >= 2**$iLevel)
-									{
-										$sHumanSize = sprintf('%.3g ', $sHTMLValue / (2**$iLevel)) . substr($sUnit, $iLevel/3, 1) . 'iB';
-										break;
-									}
-								}
-							}
-							return $sHumanSize;
-						}
-						else
-						{
-							return parent::GetAsHTML($sAttCode, $bLocalize);
-						}
-					}]]>
-					</code>
-				</method>
-			</methods>
+			<presentation>
+				<details>
+					<items>
+						<item id="UsedSpace" _delta="define">
+							<rank>95</rank>
+						</item>
+					</items>
+				</details>
+			</presentation>
+		</class>
+		<class id="DatabaseSchema" _delta="must_exist">
+			<fields>
+				<field id="UsedSpace" xsi:type="AttributeDecimal" _delta="define">
+					<sql>usedspace</sql>
+					<default_value/>
+					<is_null_allowed>true</is_null_allowed>
+					<digits>18</digits>
+					<decimals>0</decimals>
+					<tracking_level>none</tracking_level>
+				</field>
+			</fields>
 			<presentation>
 				<details>
 					<items>
