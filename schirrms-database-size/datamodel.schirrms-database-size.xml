@@ -18,7 +18,7 @@
 				<details>
 					<items>
 						<item id="UsedSpace" _delta="define">
-							<rank>95</rank>
+							<rank>75</rank>
 						</item>
 					</items>
 				</details>
@@ -39,7 +39,7 @@
 				<details>
 					<items>
 						<item id="UsedSpace" _delta="define">
-							<rank>95</rank>
+							<rank>45</rank>
 						</item>
 					</items>
 				</details>
