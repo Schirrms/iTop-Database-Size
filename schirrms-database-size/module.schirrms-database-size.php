@@ -23,7 +23,7 @@ SetupWebPage::AddModule(
 		// Components
 		//
 		'datamodel' => array(
-			'model.schirrms-database-size.php'
+			'model.schirrms-database-size.php',
 			'main.schirrms-database-size.class.inc.php'
 		),
 		'webservice' => array(
