@@ -13,7 +13,7 @@ class AttributeDecimalInIB extends AttributeDecimal
 		$sValueLabel = parent::GetValueLabel($sValue);
 		if(($sValueLabel !== null) && ($sValueLabel !== ''))
 		{
-			$sValueHumanLabel .= $sValueLabel.' B';
+			$sValueHumanLabel = $sValueLabel.' B';
 			if(is_numeric($sValueLabel))
 			{
 				$sUnit = ' KMGTPE';
@@ -43,7 +43,7 @@ class AttributeDecimalInIB extends AttributeDecimal
 		$sHTMLValue = parent::GetAsHTML($sValue, $oHostObject, $bLocalize);
 		if(($sHTMLValue !== null) && ($sHTMLValue !== ''))
 		{
-			$sHTMLHumanValue .= $sHTMLValue.' B';
+			$sHTMLHumanValue = $sHTMLValue.' B';
 			if(is_numeric($sHTMLValue))
 			{
 				$sUnit = ' KMGTPE';
