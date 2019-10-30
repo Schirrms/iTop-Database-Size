@@ -29,10 +29,10 @@ class AttributeDecimalInIB extends AttributeDecimal
 		}
 		else
 		{
-			$sValueLabel = '-';
+			$sValueHumanLabel = '-';
 		}
 
-		return $sValueLabel;
+		return $sValueHumanLabel;
 	}
 
 	/**
@@ -43,15 +43,15 @@ class AttributeDecimalInIB extends AttributeDecimal
 		$sHTMLValue = parent::GetAsHTML($sValue, $oHostObject, $bLocalize);
 		if(($sHTMLValue !== null) && ($sHTMLValue !== ''))
 		{
-			$sValueHumanLabel .= $sValueLabel.' B';
-			if(is_numeric($sValueLabel))
+			$sHTMLHumanValue .= $sHTMLValue.' B';
+			if(is_numeric($sHTMLValue))
 			{
 				$sUnit = ' KMGTPE';
 				for ($iLevel=50; $iLevel >0 ;$iLevel=$iLevel-10)
 				{
-					if ($sValueLabel >= 10**$iLevel)
+					if ($sHTMLValue >= 10**$iLevel)
 					{
-						$sValueHumanLabel = sprintf('%.3g ', $sValueLabel / (2**$iLevel)) . substr($sUnit, $iLevel/3, 1) . 'B';
+						$sHTMLHumanValue = sprintf('%.3g ', $sHTMLValue / (2**$iLevel)) . substr($sUnit, $iLevel/3, 1) . 'B';
 						break;
 					}
 				}
@@ -59,9 +59,9 @@ class AttributeDecimalInIB extends AttributeDecimal
 		}
 		else
 		{
-			$sHTMLValue = '-';
+			$sHTMLHumanValue = '-';
 		}
 
-		return $sHTMLValue;
+		return $sHTMLHumanValue;
 	}
 }
