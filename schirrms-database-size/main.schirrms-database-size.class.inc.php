@@ -14,7 +14,7 @@ class AttributeDecimalInIB extends AttributeDecimal
 		if(($sValueLabel !== null) && ($sValueLabel !== ''))
 		{
 			$sValueHumanLabel = $sValueLabel.' B';
-			if(is_numeric($sValueLabel))
+			/* if(is_numeric($sValueLabel))
 			{
 				$sUnit = ' KMGTPE';
 				for ($iLevel=50; $iLevel >0 ;$iLevel=$iLevel-10)
@@ -30,7 +30,7 @@ class AttributeDecimalInIB extends AttributeDecimal
 		else
 		{
 			$sValueHumanLabel = '-';
-		}
+		}*/
 
 		return $sValueHumanLabel;
 	}
@@ -44,7 +44,7 @@ class AttributeDecimalInIB extends AttributeDecimal
 		if(($sHTMLValue !== null) && ($sHTMLValue !== ''))
 		{
 			$sHTMLHumanValue = $sHTMLValue.' B';
-			if(is_numeric($sHTMLValue))
+			/* if(is_numeric($sHTMLValue))
 			{
 				$sUnit = ' KMGTPE';
 				for ($iLevel=50; $iLevel >0 ;$iLevel=$iLevel-10)
@@ -60,7 +60,7 @@ class AttributeDecimalInIB extends AttributeDecimal
 		else
 		{
 			$sHTMLHumanValue = '-';
-		}
+		} */
 
 		return $sHTMLHumanValue;
 	}
