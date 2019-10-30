@@ -19,9 +19,9 @@ class AttributeDecimalInIB extends AttributeDecimal
 				$sUnit = ' KMGTPE';
 				for ($iLevel=50; $iLevel >0 ;$iLevel=$iLevel-10)
 				{
-					if ($sValueLabel >= 10**$iLevel)
+					if ($sValueLabel >= 2**$iLevel)
 					{
-						$sValueHumanLabel = sprintf('%.3g ', $sValueLabel / (2**$iLevel)) . substr($sUnit, $iLevel/3, 1) . 'B';
+						$sValueHumanLabel = sprintf('%.3g ', $sValueLabel / (2**$iLevel)) . substr($sUnit, $iLevel/10, 1) . 'B';
 						break;
 					}
 				}
@@ -49,9 +49,9 @@ class AttributeDecimalInIB extends AttributeDecimal
 				$sUnit = ' KMGTPE';
 				for ($iLevel=50; $iLevel >0 ;$iLevel=$iLevel-10)
 				{
-					if ($sHTMLValue >= 10**$iLevel)
+					if ($sHTMLValue >= 2**$iLevel)
 					{
-						$sHTMLHumanValue = sprintf('%.3g ', $sHTMLValue / (2**$iLevel)) . substr($sUnit, $iLevel/3, 1) . 'B';
+						$sHTMLHumanValue = sprintf('%.3g ', $sHTMLValue / (2**$iLevel)) . substr($sUnit, $iLevel/10, 1) . 'B';
 						break;
 					}
 				}
