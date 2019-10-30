@@ -8,6 +8,7 @@ class AttributeDecimalInIB extends AttributeDecimal
 	/**
 	 * @inheritdoc
 	 */
+	 /* 
 	public function GetValueLabel($sValue)
 	{
 		$sValueLabel = parent::GetValueLabel($sValue);
@@ -64,4 +65,5 @@ class AttributeDecimalInIB extends AttributeDecimal
 
 		return $sHTMLHumanValue;
 	}
+	*/
 }
