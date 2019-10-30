@@ -22,7 +22,7 @@ class AttributeDecimalInIB extends AttributeDecimal
 				{
 					if ($sValueLabel >= 2**$iLevel)
 					{
-						$sValueHumanLabel = sprintf('%.3g ', $sValueLabel / (2**$iLevel)) . substr($sUnit, $iLevel/10, 1) . 'B';
+						$sValueHumanLabel = sprintf('%.3g ', $sValueLabel / (2**$iLevel)) . substr($sUnit, $iLevel/10, 1) . 'iB';
 						break;
 					}
 				}
@@ -52,7 +52,7 @@ class AttributeDecimalInIB extends AttributeDecimal
 				{
 					if ($sHTMLValue >= 2**$iLevel)
 					{
-						$sHTMLHumanValue = sprintf('%.3g ', $sHTMLValue / (2**$iLevel)) . substr($sUnit, $iLevel/10, 1) . 'B';
+						$sHTMLHumanValue = sprintf('%.3g ', $sHTMLValue / (2**$iLevel)) . substr($sUnit, $iLevel/10, 1) . 'iB';
 						break;
 					}
 				}
