@@ -14,7 +14,8 @@ class AttributeDecimalInIB extends AttributeDecimal
 		$sValueLabel = parent::GetValueLabel($sValue);
 		if(($sValueLabel !== null) && ($sValueLabel !== ''))
 		{
-			$sValueHumanLabel = $sValueLabel.' B';
+			$sUnitSuffix = Dict::S('Class:DBServer/Attribute:UsedSpace/unit');
+			$sValueHumanLabel = $sValueLabel.' '.$sUnitSuffix;
 			if(is_numeric($sValueLabel))
 			{
 				$sUnit = ' KMGTPE';
@@ -22,7 +23,7 @@ class AttributeDecimalInIB extends AttributeDecimal
 				{
 					if ($sValueLabel >= 2**$iLevel)
 					{
-						$sValueHumanLabel = sprintf('%.3g ', $sValueLabel / (2**$iLevel)) . substr($sUnit, $iLevel/10, 1) . 'iB';
+						$sValueHumanLabel = sprintf('%.3g ', $sValueLabel / (2**$iLevel)) . substr($sUnit, $iLevel/10, 1) . 'i'.$sUnitSuffix;
 						break;
 					}
 				}
@@ -44,7 +45,8 @@ class AttributeDecimalInIB extends AttributeDecimal
 		$sHTMLValue = parent::GetAsHTML($sValue, $oHostObject, $bLocalize);
 		if(($sHTMLValue !== null) && ($sHTMLValue !== ''))
 		{
-			$sHTMLHumanValue = $sHTMLValue.' B';
+			$sUnitSuffix = Dict::S('Class:DBServer/Attribute:UsedSpace/unit');
+			$sHTMLHumanValue = $sHTMLValue.' '.$sUnitSuffix;
 			if(is_numeric($sHTMLValue))
 			{
 				$sUnit = ' KMGTPE';
@@ -52,7 +54,7 @@ class AttributeDecimalInIB extends AttributeDecimal
 				{
 					if ($sHTMLValue >= 2**$iLevel)
 					{
-						$sHTMLHumanValue = sprintf('%.3g ', $sHTMLValue / (2**$iLevel)) . substr($sUnit, $iLevel/10, 1) . 'iB';
+						$sHTMLHumanValue = sprintf('%.3g ', $sHTMLValue / (2**$iLevel)) . substr($sUnit, $iLevel/10, 1) . 'i'.$sUnitSuffix;
 						break;
 					}
 				}
