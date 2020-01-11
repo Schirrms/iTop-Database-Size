@@ -4,6 +4,14 @@
 	</constants>
 	<classes>
 		<class id="DBServer" _delta="must_exist">
+			<properties _delta="must_exist">
+				<naming _delta="redefine">
+					<attributes>
+						<attribute id="system_name"/>
+						<attribute id="name"/>
+					</attributes>
+				</naming>
+			</properties>
 			<fields>
 				<field id="UsedSpace" xsi:type="AttributeDecimalInIB" _delta="define">
 					<sql>usedspace</sql>
@@ -32,7 +40,20 @@
 			</presentation>
 		</class>
 		<class id="DatabaseSchema" _delta="must_exist">
+			<properties _delta="must_exist">
+				<naming _delta="redefine">
+					<attributes>
+						<attribute id="system_name"/>
+						<attribute id="dbserver_name"/>
+						<attribute id="name"/>
+					</attributes>
+				</naming>
+			</properties>
 			<fields>
+				<field id="system_name" xsi:type="AttributeExternalField" _delta="define">
+					<extkey_attcode>dbserver_id</extkey_attcode>
+					<target_attcode>system_name</target_attcode>
+				</field>
 				<field id="UsedSpace" xsi:type="AttributeDecimalInIB" _delta="define">
 					<sql>usedspace</sql>
 					<default_value/>
