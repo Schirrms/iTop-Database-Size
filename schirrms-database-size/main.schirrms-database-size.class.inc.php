@@ -21,11 +21,9 @@ class AttributeDecimalInIB extends AttributeDecimal
 				$sUnit = ' KMGTPE';
 				for ($iLevel=50; $iLevel >0 ;$iLevel=$iLevel-10)
 				{
-					// next formula give odd results if the value is between 1000 and 1023,9999
-					// if ($sValueLabel >= 2**$iLevel)
-					if ($sValueLabel >=2**$iLevel+24)
+					if ($sValueLabel >= 2**$iLevel)
 					{
-						$sValueHumanLabel = sprintf('%.3g ', $sValueLabel / (2**$iLevel)) . substr($sUnit, $iLevel/10, 1) . 'i'.$sUnitSuffix;
+						$sValueHumanLabel = sprintf('%.4g ', $sValueLabel / (2**$iLevel)) . substr($sUnit, $iLevel/10, 1) . 'i'.$sUnitSuffix;
 						break;
 					}
 				}
