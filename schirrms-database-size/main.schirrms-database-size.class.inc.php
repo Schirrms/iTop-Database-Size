@@ -23,7 +23,7 @@ class AttributeDecimalInIB extends AttributeDecimal
 				{
 					// next formula give odd results if the value is between 1000 and 1023,9999
 					// if ($sValueLabel >= 2**$iLevel)
-					if ($sValueLabel >=2**($iLevel-10)*1000)
+					if ($sValueLabel >=2**$iLevel+24)
 					{
 						$sValueHumanLabel = sprintf('%.3g ', $sValueLabel / (2**$iLevel)) . substr($sUnit, $iLevel/10, 1) . 'i'.$sUnitSuffix;
 						break;
