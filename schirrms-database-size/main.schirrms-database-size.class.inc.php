@@ -54,7 +54,7 @@ class AttributeDecimalInIB extends AttributeDecimal
 				{
 					if ($sHTMLValue >= 2**$iLevel)
 					{
-						$sHTMLHumanValue = sprintf('%.3g ', $sHTMLValue / (2**$iLevel)) . substr($sUnit, $iLevel/10, 1) . 'i'.$sUnitSuffix;
+						$sHTMLHumanValue = sprintf('%.4g ', $sHTMLValue / (2**$iLevel)) . substr($sUnit, $iLevel/10, 1) . 'i'.$sUnitSuffix;
 						break;
 					}
 				}
